@@ -1,0 +1,39 @@
+spring:
+  profiles:
+    active: test
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.0.2.32:30112
+        username: test
+        password: PeMUVk1xEent81An
+        namespace: 2ee54fab-73b2-4341-8728-625ab3b67f27
+  application:
+    name: svc-consumer
+server:
+  port: 8081
+
+
+# FeignClientProperties
+# feign 配置，ribbon 则失效
+feign:
+#  client:
+#    config:
+#      default:
+#        connect-timeout: 20000
+#        read-timeout: 20000
+  # org.springframework.cloud.openfeign.FeignClientFactoryBean.configureFeign()
+  #      connectTimeout: 20000
+#      readTimeout: 20000
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+
+
+# feign 没有配置，使用 ribbon 的，ribbon 没有配置，默认都是 connectTimeout 和 readTimeout 都是 1s (ribbon 默认），writeTimeout 使用 okhttp3.OkHttpClient 的 10 s
+#DefaultClientConfigImpl
+#ribbon:
+#  ConnectTimeout: 10000
+#  ReadTimeout: 10000
+

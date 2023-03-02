@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: test
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.0.2.32:30112
+        username: test
+        password: PeMUVk1xEent81An
+        namespace: 2ee54fab-73b2-4341-8728-625ab3b67f27
+  application:
+    name: svc-provider
