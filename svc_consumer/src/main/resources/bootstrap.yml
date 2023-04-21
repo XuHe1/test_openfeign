@@ -31,7 +31,7 @@ feign:
     enabled: true
 
 
-# feign 没有配置，使用 ribbon 的，ribbon 没有配置，默认都是 connectTimeout 和 readTimeout 都是 1s (ribbon 默认），writeTimeout 使用 okhttp3.OkHttpClient 的 10 s
+# feign 没有配置，使用 ribbon 的，ribbon 没有配置，默认 connectTimeout 和 readTimeout 都是 1s (ribbon 默认），writeTimeout 使用 okhttp3.OkHttpClient 的 10 s
 #DefaultClientConfigImpl
 #ribbon:
 #  ConnectTimeout: 10000
